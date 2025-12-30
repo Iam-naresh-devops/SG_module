@@ -4,7 +4,7 @@ variable "sg_name" {
 variable "sg_description" {
     }
 variable "vpc_id" {
-  default = data.aws_vpc.default.id
+  default = true
 }
 variable "common_tags" {
      type = map
