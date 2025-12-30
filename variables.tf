@@ -47,3 +47,6 @@ variable "protocol" {
 variable "cidr_blocks" {
   type = list(string)
 }
+variable "security_group_id" {
+  type = list(string)
+}
