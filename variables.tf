@@ -21,3 +21,25 @@ variable "project" {
   
 }
 
+variable "ingress_rules" { 
+    type = object({
+        from_port        = ""
+        to_port          = ""
+        protocol         = ""
+        cidr_blocks      = ["0.0.0.0/0"]
+    })
+  
+}
+
+variable "from_port" {
+  type = number
+}
+variable "to_port" {
+  type = number
+}
+variable "protocol" {
+   type = string
+}
+variable "cidr_blocks" {
+  type = list(string)
+}
