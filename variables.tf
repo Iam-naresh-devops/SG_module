@@ -4,7 +4,7 @@ variable "sg_name" {
 variable "sg_description" {
     }
 variable "vpc_id" {
-
+  default = data.aws_vpc.default.id
 }
 variable "common_tags" {
      type = map
@@ -23,10 +23,14 @@ variable "project" {
 
 variable "ingress_rules" { 
     type = object({
+        description   = ""
         from_port        = ""
         to_port          = ""
         protocol         = ""
+        security_group_id    = list(string)
+        source_security_group_id    = list(string)
         cidr_blocks      = ["0.0.0.0/0"]
+
     })
   
 }
