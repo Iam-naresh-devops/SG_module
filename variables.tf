@@ -23,13 +23,13 @@ variable "project" {
 
 variable "ingress_rules" { 
     type = object({
-        description   = ""
-        from_port        = ""
-        to_port          = ""
-        protocol         = ""
+        description   = string
+        from_port        = number
+        to_port          = number
+        protocol         = string
         security_group_id    = list(string)
         source_security_group_id    = list(string)
-        cidr_blocks      = ["0.0.0.0/0"]
+        cidr_blocks      = list(string)
 
     })
   
