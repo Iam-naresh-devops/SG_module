@@ -1,4 +1,5 @@
 ******Required inputs**********
+latest
 
 environment = 
 project = 
