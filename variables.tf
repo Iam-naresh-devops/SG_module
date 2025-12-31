@@ -48,7 +48,7 @@ variable "protocol" {
 #   type = list(string)
 # }
 variable "security_group_id" {
-  type = list(string)
+ 
 }
 variable "source_security_group_id" {
  
