@@ -9,27 +9,33 @@ resource "aws_security_group" "sg" {
    # Create_date_time = formatdate("YYYY-MM-DD hh:mm:ss ZZZ", timestamp())
   } )
 
-ingress {
-     #for_each = var.ingress_rules
-   # content {
-       
-        from_port        = var.from_port
-        to_port          = var.to_port
-        protocol         = var.protocol
-        security_groups          = var.security_group_id
-        
-        self                     = false
-        #cidr_blocks      = var.cidr_blocks
-   #}
-      
-      }
-
-egress {
+  egress {
         from_port        = 0
         to_port          = 0
         protocol         = "-1"
         cidr_blocks      = ["0.0.0.0/0"]
         #ipv6_cidr_blocks = ["::/0"]
-    } 
+    }
+
+}
+
+resource "aws_security_group_rule" "dynamic_rules" {
+
+
+  type        = "ingress"
+  description = "${var.sg_description} with ingress"
+  from_port   = var.from_port
+  to_port     = var.to_port
+  protocol    = "tcp"
+
+  security_group_id = var.sg_name
+
+  source_security_group_id = var.source_security_group_id
+
+  cidr_blocks = 
+
+
+
+ 
     
 }
