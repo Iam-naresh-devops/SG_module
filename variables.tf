@@ -44,9 +44,9 @@ variable "to_port" {
 variable "protocol" {
    type = string
 }
-variable "cidr_blocks" {
-  type = list(string)
-}
+# variable "cidr_blocks" {
+#   type = list(string)
+# }
 variable "security_group_id" {
   type = list(string)
 }
