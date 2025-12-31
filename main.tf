@@ -27,15 +27,6 @@ resource "aws_security_group_rule" "dynamic_rules" {
   from_port   = var.from_port
   to_port     = var.to_port
   protocol    = "tcp"
-
   security_group_id = var.sg_name
-
   source_security_group_id = var.source_security_group_id
-
-  cidr_blocks = 
-
-
-
- 
-    
 }

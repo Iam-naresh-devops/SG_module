@@ -21,19 +21,19 @@ variable "project" {
   
 }
 
-variable "ingress_rules" { 
-    type = object({
-        description   = string
-        from_port        = number
-        to_port          = number
-        protocol         = string
-        security_group_id    = list(string)
-        source_security_group_id    = list(string)
-        cidr_blocks      = list(string)
+# variable "ingress_rules" { 
+#     type = object({
+#         description   = string
+#         from_port        = number
+#         to_port          = number
+#         protocol         = string
+#         security_group_id    = list(string)
+#         source_security_group_id    = list(string)
+#         cidr_blocks      = list(string)
 
-    })
+#     })
   
-}
+# }
 
 variable "from_port" {
   type = number
@@ -44,12 +44,12 @@ variable "to_port" {
 variable "protocol" {
    type = string
 }
-# variable "cidr_blocks" {
-#   type = list(string)
-# }
+variable "cidr_blocks" {
+  type = list(string)
+}
 variable "security_group_id" {
   type = list(string)
 }
 variable "source_security_group_id" {
-  type = list(string)
+ 
 }
