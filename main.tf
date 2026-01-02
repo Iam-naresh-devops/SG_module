@@ -20,13 +20,15 @@ resource "aws_security_group" "sg" {
 }
 
 resource "aws_security_group_rule" "dynamic_rules" {
-
+  
+   for_each = var.ingress_rules
 
   type        = "ingress"
-  description = "${var.sg_description} with ingress"
-  from_port   = var.from_port
-  to_port     = var.to_port
+  description = lookup(each.value, "description", null)
+  from_port   = each.value.from_port
+  to_port     =  each.value.to_port
   protocol    = "tcp"
   security_group_id = aws_security_group.sg.id
-  source_security_group_id = var.source_security_group_id
+  source_security_group_id = lookup(each.value, "source_security_group_id", null)
+  cidr_blocks = lookup(each.value, "cidr_blocks", null)
 }
