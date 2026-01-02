@@ -51,7 +51,7 @@ variable "ingress_rules" {
 
 
 
-variable "from_port" {
+/* variable "from_port" {
   type = number
 }
 variable "to_port" {
@@ -68,4 +68,4 @@ variable "protocol" {
 # }
 variable "source_security_group_id" {
  
-}
+} */
