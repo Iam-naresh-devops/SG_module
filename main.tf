@@ -6,6 +6,7 @@ resource "aws_security_group" "sg" {
   tags = merge(var.common_tags,
   {
     Name = "${var.project}-${var.environment}-${var.sg_name}"
+    component = "${var.sg_name}"
    # Create_date_time = formatdate("YYYY-MM-DD hh:mm:ss ZZZ", timestamp())
   } )
 
