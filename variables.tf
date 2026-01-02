@@ -63,9 +63,9 @@ variable "protocol" {
 # variable "cidr_blocks" {
 #   type = list(string)
 # }
-variable "security_group_id" {
-  default = output.security_group
-}
+# variable "security_group_id" {
+#   default = output.security_group
+# }
 variable "source_security_group_id" {
  
 }
