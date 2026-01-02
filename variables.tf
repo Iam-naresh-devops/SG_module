@@ -35,17 +35,17 @@ variable "project" {
   
 # }
 
-variable "ingress_rules" {
-  description = "Ingress security group rules"
-  type = map(object({
-    from_port                = number
-    to_port                  = number
-    #protocol                 = string
-    source_security_group_id = optional(string)
-    cidr_blocks              = optional(list(string))
-    description              = optional(string)
-  }))
-}
+# variable "ingress_rules" {
+#   description = "Ingress security group rules"
+#   type = map(object({
+#     from_port                = number
+#     to_port                  = number
+#     #protocol                 = string
+#     source_security_group_id = optional(string)
+#     cidr_blocks              = optional(list(string))
+#     description              = optional(string)
+#   }))
+# }
 
 
 
